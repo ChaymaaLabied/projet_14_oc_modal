@@ -1,8 +1,8 @@
-
 import React, { useEffect, useRef } from "react";
+import PropTypes from "prop-types";
 import "./Modal.css";
 
-const Modal = ({ isOpen, onClose, text }) => {
+const Modal = ({ isOpen, onClose, children }) => {
   const modalRef = useRef(null);
 
   const handleBlur = (e) => {
@@ -22,13 +22,14 @@ const Modal = ({ isOpen, onClose, text }) => {
     return (
       <div className="modal-overlay" onBlur={handleBlur}>
         <div className="modal-content" ref={modalRef} tabIndex={0}>
-          <p>{text}</p>
+          {children}
         </div>
       </div>
     );
 };
-
-
-
-
+Modal.propTypes = {
+  isOpen: PropTypes.bool,
+  onClose: PropTypes.func,
+  children: PropTypes.node,
+};
 export default Modal;
