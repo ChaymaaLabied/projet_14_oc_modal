@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Modal Component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This React Modal component is a reusable and accessible way to implement modals in your web applications. Below is the documentation to help you understand and use this component effectively.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Open modal using props
+- Close modal on clicks or focus events outside the modal.
+- Customizable through child elements.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Requirements
+1. Node version > 18.0.0
+2. Text editor: Vscode
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+1. Install using npm:
+   ```bash
+   npm install @chmicha01/modal-oc
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Import and use the `Modal` component in your project as follows:
 
-### `npm run eject`
+### Example
+```jsx
+import React, { useState } from "react";
+import Modal from " @chmicha01/modal-oc";
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+function App() {
+  const [isOpen, setIsOpen] = useState(false);
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  const handleOpen = () => setIsOpen(true);
+  const handleClose = () => setIsOpen(false);
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  return (
+    <div>
+      <button onClick={handleOpen}>Open Modal</button>
+      <Modal isOpen={isOpen} onClose={handleClose}>
+        <h2>Modal Title</h2>
+        <p>This is a modal content example.</p>
+        <button onClick={handleClose}>Close</button>
+      </Modal>
+    </div>
+  );
+}
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+export default App;
+```
 
-## Learn More
+### Props
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+| Prop Name | Type         | Description                                                 |
+|-----------|--------------|-------------------------------------------------------------|
+| `isOpen`  | `bool`       | Determines if the modal is visible.                        |
+| `onClose` | `function`   | Callback function triggered when the modal is closed.      |
+| `children`| `React.node` | Content to display inside the modal.                       |
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Notes
 
-### Analyzing the Bundle Size
+- Ensure the `onClose` function correctly updates the modal's visibility state.
+- This implementation focuses on handling modal visibility.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
