@@ -1,16 +1,31 @@
 {
-  "name": "projet_14_oc_modal",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@chmicha01/modal-oc",
+  "version": "1.0.0",
+  "description": " Modal component for React projects",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "git repository": "https://github.com/ChaymaaLabied/projet_14_oc_modal",
+  "author": "Chaymaa Labied",
+  "keywords": [
+    "react",
+    "modal",
+    "library",
+    "component"
+  ],
   "dependencies": {
+    "@rollup/plugin-babel": "^6.0.4",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
     "react-router-dom": "^6.28.0",
     "react-scripts": "5.0.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
     "web-vitals": "^2.1.4"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -35,5 +50,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "rollup": "^2.79.2"
   }
 }
