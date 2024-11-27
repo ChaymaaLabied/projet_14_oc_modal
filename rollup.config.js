@@ -2,7 +2,7 @@ import babel from "@rollup/plugin-babel";
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
-import postcss from "@rollup/plugin-babel";
+import postcss from "rollup-plugin-postcss";
 
 const packageJson = require("./package.json");
 
@@ -11,7 +11,7 @@ const config = {
   output: [
     {
       file: packageJson.module,
-      format: "esm",
+      format: "esm", // import '' from  '...
       sourcemap: true,
     },
   ],
