@@ -28,6 +28,13 @@ const Modal = ({ isOpen, onClose, children }) => {
         ref={modalRef}
         tabIndex={-1}
       >
+        <button
+          className="modal-close-button"
+          onClick={onClose}
+          aria-label="Close modal"
+        >
+          &times;
+        </button>
         {children}
       </div>
     </div>
