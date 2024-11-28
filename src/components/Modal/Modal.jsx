@@ -1,3 +1,9 @@
+/**
+ * Composant Modal qui affiche une boîte de dialogue modale.
+ * @param {boolean} isOpen - Indique si la modal est ouverte.
+ * @param {function} onClose - Fonction pour fermer la modal.
+ * @param {ReactNode} children - Contenu de la modal.
+ */
 import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import "./Modal.css";
@@ -5,18 +11,21 @@ import "./Modal.css";
 const Modal = ({ isOpen, onClose, children }) => {
   const modalRef = useRef(null);
 
+  // Ferme la modal si l'élément de sortie n'est pas un enfant de la modal
   const handleBlur = (e) => {
     if (!modalRef.current.contains(e.relatedTarget)) {
       onClose();
     }
   };
 
+  // Met le focus sur la modal lorsqu'elle est ouverte
   useEffect(() => {
     if (isOpen && modalRef.current) {
       modalRef.current.focus();
     }
   }, [isOpen]);
 
+  // Ne rend rien si la modal n'est pas ouverte
   if (!isOpen) return null;
 
   return (
@@ -35,7 +44,7 @@ const Modal = ({ isOpen, onClose, children }) => {
         >
           &times;
         </button>
-        {children}
+        {children} {/* Contenu de la modal */}
       </div>
     </div>
   );
