@@ -12,8 +12,8 @@ This React Modal component is a reusable and accessible way to implement modals 
 
 ---
 
-
 ## Requirements
+
 1. Node version > 18.0.0
 2. Text editor: Vscode
 
@@ -31,9 +31,10 @@ This React Modal component is a reusable and accessible way to implement modals 
 Import and use the `Modal` component in your project as follows:
 
 ### Example
+
 ```jsx
 import React, { useState } from "react";
-import Modal from " @chmicha01/modal-oc";
+import Modal from "@chmicha01/modal-oc";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -58,12 +59,11 @@ export default App;
 
 ### Props
 
-| Prop Name | Type         | Description                                                 |
-|-----------|--------------|-------------------------------------------------------------|
-| `isOpen`  | `bool`       | Determines if the modal is visible.                        |
-| `onClose` | `function`   | Callback function triggered when the modal is closed.      |
-| `children`| `React.node` | Content to display inside the modal.                       |
-
+| Prop Name  | Type         | Description                                           |
+| ---------- | ------------ | ----------------------------------------------------- |
+| `isOpen`   | `bool`       | Determines if the modal is visible.                   |
+| `onClose`  | `function`   | Callback function triggered when the modal is closed. |
+| `children` | `React.node` | Content to display inside the modal.                  |
 
 ---
 
@@ -71,6 +71,3 @@ export default App;
 
 - Ensure the `onClose` function correctly updates the modal's visibility state.
 - This implementation focuses on handling modal visibility.
-
-
-
