@@ -34,7 +34,7 @@ Import and use the `Modal` component in your project as follows:
 
 ```jsx
 import React, { useState } from "react";
-import Modal from "@chmicha01/modal-oc";
+import { Modal } from "@chmicha01/modal-oc";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
