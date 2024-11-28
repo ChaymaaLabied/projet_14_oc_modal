@@ -6,7 +6,6 @@ const Modal = ({ isOpen, onClose, children }) => {
   const modalRef = useRef(null);
 
   const handleBlur = (e) => {
-    // Check if the blur event comes from outside the modal
     if (!modalRef.current.contains(e.relatedTarget)) {
       onClose();
     }
@@ -18,23 +17,27 @@ const Modal = ({ isOpen, onClose, children }) => {
     }
   }, [isOpen]);
 
-  if (isOpen)
-    return (
-      <div className="modal-overlay" onBlur={handleBlur}>
-        <div
-          className="modal-content"
-          role="dialog"
-          ref={modalRef}
-          tabIndex={0}
-        >
-          {children}
-        </div>
+  if (!isOpen) return null;
+
+  return (
+    <div className="modal-overlay" onBlur={handleBlur} role="presentation">
+      <div
+        className="modal-content"
+        role="dialog"
+        aria-modal="true"
+        ref={modalRef}
+        tabIndex={-1}
+      >
+        {children}
       </div>
-    );
+    </div>
+  );
 };
+
 Modal.propTypes = {
-  isOpen: PropTypes.bool,
-  onClose: PropTypes.func,
-  children: PropTypes.node,
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 };
+
 export default Modal;
