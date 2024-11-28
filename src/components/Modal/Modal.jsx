@@ -18,14 +18,12 @@ const Modal = ({ isOpen, onClose, children }) => {
     }
   };
 
-  // Met le focus sur la modal lorsqu'elle est ouverte
   useEffect(() => {
     if (isOpen && modalRef.current) {
       modalRef.current.focus();
     }
   }, [isOpen]);
 
-  // Ne rend rien si la modal n'est pas ouverte
   if (!isOpen) return null;
 
   return (
@@ -37,14 +35,16 @@ const Modal = ({ isOpen, onClose, children }) => {
         ref={modalRef}
         tabIndex={-1}
       >
-        <button
-          className="modal-close-button"
-          onClick={onClose}
-          aria-label="Close modal"
-        >
-          &times;
-        </button>
-        {children} {/* Contenu de la modal */}
+        <div className="modal-header">
+          <button
+            className="modal-close-button"
+            onClick={onClose}
+            aria-label="Close modal"
+          >
+            &times;
+          </button>
+        </div>
+        <div className="modal-body">{children}</div>
       </div>
     </div>
   );

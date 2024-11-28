@@ -1,38 +1,48 @@
-/* Modal Background */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Ensure it's above other elements */
+  z-index: 1000;
 }
 
-/* Modal Content */
 .modal-content {
-  background-color: #ffffff; /* White background for modal */
-  padding: 10px 30px; /* Padding around text */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  text-align: center; /* Center align text */
-  max-width: 400px; /* Limit modal width */
-  width: 90%; /* Responsive width */
+  position: relative;
+  background-color: rgb(187, 245, 193);
+  border-radius: 10px;
+  box-shadow: rgb(5, 60, 9) 0px 0px 0px 2px;
+  color: #000;
+  font-size: 24px;
+  padding: 20px 50px;
+  width: fit-content;
+  max-width: 90%;
+  text-align: center;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 .modal-close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
   background: transparent;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
+  color: #2c6e49; /* Vert foncé */
 }
 
 .modal-close-button:hover {
-  color: red;
+  color: #1e4d32; /* Vert plus foncé */
+}
+
+.modal-body {
+  color: #2c6e49; /* Texte en vert foncé */
 }
