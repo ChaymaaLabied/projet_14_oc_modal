@@ -21,7 +21,12 @@ const Modal = ({ isOpen, onClose, children }) => {
   if (isOpen)
     return (
       <div className="modal-overlay" onBlur={handleBlur}>
-        <div className="modal-content" ref={modalRef} tabIndex={0}>
+        <div
+          className="modal-content"
+          role="dialog"
+          ref={modalRef}
+          tabIndex={0}
+        >
           {children}
         </div>
       </div>
