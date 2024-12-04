@@ -13,7 +13,7 @@
 
 .modal-content {
   position: relative;
-  background-color: #568203;
+  background-color: #e6e6e6;
   border-radius: 10px;
   box-shadow: rgb(5 60 9 / 29%) 0px 0px 0px 2px;
   color: #000;
@@ -36,7 +36,7 @@
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: snow;
+  color: #568203;
 }
 
 .modal-close-button:hover {
