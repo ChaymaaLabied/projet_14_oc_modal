@@ -13,12 +13,12 @@
 
 .modal-content {
   position: relative;
-  background-color: rgb(187, 245, 193);
+  background-color: #568203;
   border-radius: 10px;
-  box-shadow: rgb(5, 60, 9) 0px 0px 0px 2px;
+  box-shadow: rgb(5 60 9 / 29%) 0px 0px 0px 2px;
   color: #000;
   font-size: 24px;
-  padding: 20px 50px;
+  padding: 1rem;
   width: fit-content;
   max-width: 90%;
   text-align: center;
@@ -36,13 +36,9 @@
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: #2c6e49; /* Vert foncé */
+  color: snow;
 }
 
 .modal-close-button:hover {
   color: #1e4d32; /* Vert plus foncé */
-}
-
-.modal-body {
-  color: #2c6e49; /* Texte en vert foncé */
 }
